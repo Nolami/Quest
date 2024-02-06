@@ -50,11 +50,9 @@
     </div>
 
     <div id="thans" class="hidden">
-        <form onsubmit="return validateForm3()">
             <label for="thans">Will you be my valentine? (yes or no)</label>
             <input type="text" required name="thans" id="thans">
-            <input type="submit" value="Submit">
-        </form>
+            <button onclick="validateForm3()">Submit</button>
     </div>
     
 <script>
@@ -86,18 +84,18 @@
         return false;
     }
     function validateForm3() {
+    var ans3 = document.getElementById("thans").value();
+    var ans3ri = "yes";
 
-        var ans3 = document.getElementById("thans").value.trim();
-        var ans3ri = "yes";
-
-        if(ans3.toLowerCase() === ans3ri.toLower()) {
-            alert("Yay, I'm so glad")
-        }
-        else {
-            alert(":((((")
-        }
-        document.getElementById("thans").submit();
+    if (ans3.toLowerCase() === ans3ri.toLowerCase()) {
+        alert("Yay, I'm so glad");
+        alert("Congratulations, you have completed my quest");
+    } else {
+        alert(":((((");
     }
+    return false;
+}
+
 
 </script>    
 
